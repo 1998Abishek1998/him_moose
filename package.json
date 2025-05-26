@@ -1,0 +1,16 @@
+{
+  "name": "him_moo",
+  "scripts": {
+    "dev": "cd frontend && bun run build && cd .. && bun --hot --smol run server/index.ts",
+    "dev:be": "bun --hot --smol run server/index.ts",
+    "build": "bun build --target=bun server/index.ts --outdir ./dist",
+    "start:prod": "bun dist/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "hono": "^4.7.10"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
