@@ -1,7 +1,7 @@
 import { serveStatic } from "hono/bun";
 import { HTTPException } from "hono/http-exception";
 import { env } from "./config/env";
-import app from "./server/app";
+import app from "./app";
 
 app.get("*", serveStatic({ root: "./dist/build" }));
 app.get("*", serveStatic({ path: "./dist/build/index.html" }));
