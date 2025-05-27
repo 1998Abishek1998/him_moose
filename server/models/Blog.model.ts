@@ -46,5 +46,5 @@ const blogSchema = new mongoose.Schema(
   }
 );
 
-export type Gallery = mongoose.InferSchemaType<typeof blogSchema>;
-export const GalleryModel = mongoose.model("gallery", blogSchema);
+export type Blog = mongoose.InferSchemaType<typeof blogSchema>;
+export const BlogModel = mongoose.model("blogs", blogSchema);

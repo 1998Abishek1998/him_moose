@@ -3,6 +3,7 @@ import login from "../controllers/login.controller";
 import { validateSchema } from "../middlewares/validate-schema";
 import LoginSchema from "../schemas/login.schema";
 import { zValidator } from "@hono/zod-validator";
+import blogRoute from "./blogRoute";
 
 const dashboardRoute = new Hono();
 
@@ -11,5 +12,11 @@ dashboardRoute.post(
   zValidator("json", LoginSchema, validateSchema),
   login
 );
+
+dashboardRoute.route("/blog", blogRoute);
+dashboardRoute.route("/gallery", blogRoute);
+dashboardRoute.route("/menu", blogRoute);
+dashboardRoute.route("/reservation", blogRoute);
+dashboardRoute.route("/users", blogRoute);
 
 export default dashboardRoute;
