@@ -6,6 +6,7 @@ export enum BlogType {
   CATERING = "catering",
   CONTACT = "contact",
   RESERVE = "reservation",
+  VLT = "vlt",
 }
 
 export enum BlogParagraph {

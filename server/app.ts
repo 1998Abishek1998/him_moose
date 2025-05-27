@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-// import router from './router';
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { prettyJSON } from "hono/pretty-json";
@@ -9,6 +8,7 @@ import { Bindings, Variables } from "./types/shared";
 import { env } from "./config/env";
 import { customLogger } from "./utils/customLogger";
 import api from "./routes/api";
+import { dbConnect } from "./config/db";
 
 const app = new Hono<{ Bindings: Bindings; Variables: Variables }>();
 
@@ -49,5 +49,7 @@ app.use(prettyJSON());
 app.use(logger(customLogger));
 
 app.route("/api", api);
-
+dbConnect()
+  .then(() => console.log("db connected"))
+  .catch((err) => console.log("db error ", err));
 export default app;
