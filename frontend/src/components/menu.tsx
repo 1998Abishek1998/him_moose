@@ -43,7 +43,7 @@ function Menu() {
                     ))
                 }
             </div>
-            <MenuItems />
+            <MenuItems activeTab={activeTab} />
         </section>
     )
 }

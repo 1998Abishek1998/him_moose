@@ -1,3 +1,4 @@
+import OpeningSoonTag from "./tag/OpeningSoon"
 
 const Footer = () => {
     return (
@@ -6,6 +7,7 @@ const Footer = () => {
                 <div className="footer-logo">
                     <img src={"/banner.png"} alt='Logo' width={100} height={100}/>
                     <h1>The Himalayan Moose</h1>
+                    <OpeningSoonTag/>
                 </div>
                 {/* <div className="social-icons">
                     <a href="#">Facebook<i className="fab fa-facebook-f"></i></a>

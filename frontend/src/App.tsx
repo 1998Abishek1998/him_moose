@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import Products from './pages/Products';
 import Settings from './pages/Settings';
+import RestaurantMenu from './pages/Menu';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="gallery" element={<Gallery />} />
+            <Route path="menu" element={<RestaurantMenu />} />
             <Route path="reservation" element={<Reservation />} />
           </Route>
           <Route path="/dashboard" element={<DashboardLayout />}>

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import OpeningSoonTag from "./tag/OpeningSoon";
 
 const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/gallery', label: 'Gallery' },
+    { href: '/menu', label: 'Menu' },
     { href: '/reservation', label: 'Reservation' },
 ];
 
@@ -26,7 +28,7 @@ const Header: React.FC = () => {
                 }}
                 >
                     <img src={"/banner.png"} alt='Logo' height={50} width={55} />
-                    {/* <h1>The Himalayan Moose</h1> */}
+                    <OpeningSoonTag/>
                 </div>
                 <ul className="nav-links">
                     {
