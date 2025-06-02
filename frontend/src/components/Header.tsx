@@ -5,7 +5,7 @@ import OpeningSoonTag from "./tag/OpeningSoon";
 const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/gallery', label: 'Gallery' },
+    // { href: '/gallery', label: 'Gallery' },
     { href: '/menu', label: 'Menu' },
     { href: '/reservation', label: 'Reservation' },
 ];
@@ -17,6 +17,7 @@ const Header: React.FC = () => {
     const handleNavClick = (href: string) => {
         setActiveTab(href);
         navigate(href)
+        window.scrollTo(0, 0);
     };
 
     return (
@@ -28,25 +29,24 @@ const Header: React.FC = () => {
                 }}
                 >
                     <img src={"/banner.png"} alt='Logo' height={50} width={55} />
-                    <OpeningSoonTag/>
+                    <OpeningSoonTag />
                 </div>
                 <ul className="nav-links">
                     {
                         navItems.map(itm => (
-                            <li key={itm.href} className={activeTab === itm.href ? 'active' : ''}
+                            <li key={itm.href} className={activeTab === itm.href ? 'active' : 'text-white'}
                                 onClick={(e) => {
                                     e.preventDefault()
                                     handleNavClick(itm.href)
                                 }}
                             >
-                                <a href={itm.href}>{itm.label}</a>
+                                {itm.label}
                             </li>
                         ))
                     }
                 </ul>
             </nav>
         </header>
-
     );
 }
 

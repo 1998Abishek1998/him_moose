@@ -100,35 +100,35 @@ export default function RestaurantMenu() {
     const MenuItem = ({ item }: any) => (
         <div className="flex justify-between items-start mb-6">
             <div className="flex-1 pr-4">
-                <h3 className="font-bold text-gray-800 text-sm mb-1 uppercase tracking-wide">
+                <h3 className="font-bold text-gray-300 text-sm mb-1 uppercase tracking-wide">
                     {item.name}
                 </h3>
                 {item.description && (
-                    <p className="text-gray-600 text-sm leading-relaxed mb-1">
+                    <p className="text-gray-500 text-sm leading-relaxed mb-1">
                         {item.description}
                     </p>
                 )}
                 {item.addOns && (
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                         {item.addOns}
                     </p>
                 )}
             </div>
             {item.price && (
-                <div className="text-gray-800 font-semibold text-sm whitespace-nowrap">
+                <div className="text-gray-600 font-semibold text-sm whitespace-nowrap">
                     {typeof item.price === 'number' ? item.price : item.price}
                 </div>
             )}
         </div>
     );
 
-    const MenuSection = ({ title, items, titleColor = "text-orange-500" }) => (
+    const MenuSection = ({ title, items, titleColor = "text-orange-500" }: { title: string, items: any[], titleColor?: string }) => (
         <div className="mb-8">
             <div className="mb-6">
                 <h2 className={`text-xl font-bold ${titleColor} uppercase tracking-wider mb-2`}>
                     {title}
                 </h2>
-                <div className={`h-0.5 ${titleColor === "text-orange-500" ? "bg-orange-500" : "bg-orange-500"} w-full`}></div>
+                <div className={`h-0.5 ${titleColor === "text-orange-500" ? "bg-orange-500" : ""} w-full`}></div>
             </div>
             {items.map((item: any, index: any) => (
                 <MenuItem key={index} item={item} />
@@ -137,29 +137,31 @@ export default function RestaurantMenu() {
     );
 
     return (
-        <div className="max-w-6xl mx-auto p-6 bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Left Column */}
-                <div>
-                    <MenuSection
-                        title="APPETIZERS"
-                        items={menuData.appetizers}
-                    />
-                </div>
+        <section>
+            <div className="max-w-6xl mx-auto bg-black px-2 mt-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-2">
+                    {/* Left Column */}
+                    <div>
+                        <MenuSection
+                            title="APPETIZERS"
+                            items={menuData.appetizers}
+                        />
+                    </div>
 
-                {/* Right Column */}
-                <div>
-                    <MenuSection
-                        title="4 THE GROUP"
-                        items={menuData.forTheGroup}
-                    />
+                    {/* Right Column */}
+                    <div>
+                        <MenuSection
+                            title="4 THE GROUP"
+                            items={menuData.forTheGroup}
+                        />
 
-                    <MenuSection
-                        title="SALADS & SOUPS"
-                        items={menuData.saladsAndSoups}
-                    />
+                        <MenuSection
+                            title="SALADS & SOUPS"
+                            items={menuData.saladsAndSoups}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

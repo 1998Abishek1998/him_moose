@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import Layout from './layout/Layout';
 import About from './components/About';
 import Reservation from './components/Reservation';
-import Gallery from './components/Gallery';
+// import Gallery from './components/Gallery';
 import DashboardLayout from './layout/DashboardLayout';
 import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="gallery" element={<Gallery />} />
+            {/* <Route path="gallery" element={<Gallery />} /> */}
             <Route path="menu" element={<RestaurantMenu />} />
             <Route path="reservation" element={<Reservation />} />
           </Route>

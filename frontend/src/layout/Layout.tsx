@@ -12,7 +12,9 @@ const Layout: React.FC<LayoutProps> = () => {
     return (
         <>
             <Header />
+            {/* <section> */}
                 <Outlet/>
+            {/* </section> */}
             <Footer />
         </>
     );

@@ -13,7 +13,6 @@ interface MenuItem {
 
 const MenuItems = ({ activeTab }: { activeTab: number }) => {
 
-    console.log(activeTab)
     const menu = useMemo(() => [
         {
             id: 1,
