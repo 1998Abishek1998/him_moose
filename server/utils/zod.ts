@@ -1,20 +1,21 @@
-import * as z from 'zod';
-import { isValidDate, isValidDateTime } from './validators';
+import * as z from "zod";
+import { isValidDate, isValidDateTime } from "./validators";
+import mongoose from "mongoose";
 
 const errorMap: z.ZodErrorMap = (issue, ctx) => {
   if (issue.code === z.ZodIssueCode.invalid_type) {
-    if (issue.received === 'undefined' || issue.received === 'null') {
-      return { message: 'required' };
+    if (issue.received === "undefined" || issue.received === "null") {
+      return { message: "required" };
     }
-    return { message: 'invalid value' };
+    return { message: "invalid value" };
   }
   if (issue.code === z.ZodIssueCode.too_small) {
-    if (issue.type === 'string') {
+    if (issue.type === "string") {
       return { message: `should contain at least ${issue.minimum} characters` };
     }
   }
   if (issue.code === z.ZodIssueCode.too_big) {
-    if (issue.type === 'string') {
+    if (issue.type === "string") {
       return { message: `should contain at most ${issue.maximum} characters` };
     }
   }
@@ -23,7 +24,31 @@ const errorMap: z.ZodErrorMap = (issue, ctx) => {
 
 z.setErrorMap(errorMap);
 
-export const numeric = () => z.number().or(z.string().regex(/^\d*\.?\d*$/).transform(Number));
-export const date = () => z.date().or(z.string().refine(isValidDate)).transform(String);
-export const dateTime = () => z.date().or(z.string().refine(isValidDateTime)).transform(String);
+export const numeric = () =>
+  z.number().or(
+    z
+      .string()
+      .regex(/^\d*\.?\d*$/)
+      .transform(Number)
+  );
+export const date = () =>
+  z.date().or(z.string().refine(isValidDate)).transform(String);
+export const dateTime = () =>
+  z.date().or(z.string().refine(isValidDateTime)).transform(String);
+
+
+export enum ReservationStatus {
+  REQUEST = "client_request",
+  VIEWED = "viewed_by_admin",
+  ACC = "accepted",
+  REJ = "rejected",
+  PEN = "pending",
+}
+
+export const objectIdSchema = z
+  .string()
+  .refine((val) => mongoose.Types.ObjectId.isValid(val), {
+    message: "Invalid ObjectId",
+  });
+
 export default z;

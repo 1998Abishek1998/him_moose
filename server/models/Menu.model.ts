@@ -2,8 +2,10 @@ import * as mongoose from "mongoose";
 
 export enum MenuType {
   MAIN = "main",
-  START = "starter",
+  APPETIZER = "appetizer",
   DESSERT = "dessert",
+  DRINK = "drink",
+  SIDE = "side",
 }
 
 const menuSchema = new mongoose.Schema(
