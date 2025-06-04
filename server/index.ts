@@ -5,7 +5,7 @@ import app from "./app";
 import mongoose from "mongoose";
 import { Context } from "hono";
 
-app.get("*", serveStatic({ root: "./dist/build" }));
+// app.get("*", serveStatic({ root: "./dist/build" }));
 app.get("*", serveStatic({ path: "./dist/build/index.html" }));
 
 app.notFound((c) => {
