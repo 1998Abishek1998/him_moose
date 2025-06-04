@@ -8,10 +8,6 @@ import mongoose from "mongoose";
 app.get("*", serveStatic({ root: "./dist/build" }))
 app.get("*", serveStatic({ path: "./dist/build/index.html" }));
 
-app.notFound((c) => {
-  return c.json("Page not Found", 404);
-});
-
 app.onError((err, c) => {
   if (err instanceof HTTPException) {
     return c.json({ error: err.getResponse().body }, err.status);

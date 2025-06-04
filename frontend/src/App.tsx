@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home'
 import Layout from './layout/Layout';
 import About from './components/About';
@@ -29,6 +29,7 @@ function App() {
             <Route path="products" element={<Products />} />
             <Route path="settings" element={<Settings />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </>
