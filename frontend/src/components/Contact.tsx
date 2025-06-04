@@ -1,40 +1,45 @@
+import CustomLabel from "./form/Label"
+import Title from "./form/Title"
 import MapHandler from "./MapHandler"
 
 const Contact = () => {
 
     return (
         <section id="contact" className="contact">
-            <div className="section-title">
-                <h2>Contact Us</h2>
-            </div>
+            <Title>Contact Us</Title>
             <div className="contact-container">
                 <div className="contact-info">
-                    <h3>Get in Touch</h3>
+
                     <div className="contact-details">
+                        <CustomLabel size="lg" color="text-orange-600">Location </CustomLabel>
+                        <br />
                         <div className="contact-item">
                             <i className="fas fa-map-marker-alt"></i>
-                            <p>3350 34 St NE, Calgary, AB T1Y 6Z8</p>
+                            <CustomLabel size="sm" color=""> 3350 34 St NE, Calgary, AB T1Y 6Z8</CustomLabel>
                         </div>
                         {/* <div className="contact-item">
                             <i className="fas fa-phone"></i>
-                            <p>(416) 555-7890</p>
-                        </div> */}
-                        {/* <div className="contact-item">
-                            <i className="fas fa-envelope"></i>
-                            <p>info@The HimalayanMoose.ca</p>
+                            <CustomLabel size="sm" color="">(416) 555-7890</CustomLabel>
                         </div> */}
                         <div className="contact-item">
+                            <i className="fas fa-envelope"></i>
+                            <CustomLabel size="sm" color="">info@himalayanmoose.com</CustomLabel>
+                        </div>
+                        <CustomLabel size="lg" color="text-orange-600">Reservation Hours </CustomLabel>
+                        <br />
+                        <div className="contact-item">
                             <i className="fas fa-clock"></i>
-                            <p>
+                            <CustomLabel size="sm" color="">
                                 Monday to Thursday: 5:00 PM - 10:00 PM<br />
                                 Friday and Saturday: 5:00 PM - 11:00 PM<br />
                                 Sunday: 5:00 PM - 9:00 PM
-                            </p>
+                            </CustomLabel>
                         </div>
                     </div>
-                    {/* <div className="social-links">
-                        <a href="#" className="btn">Follow us on Instagram</a>
-                    </div> */}
+                    <div className="social-links">
+
+                        <a href="https://www.facebook.com/profile.php?id=61576659279261" className="btn">Facebook</a>
+                    </div>
                 </div>
                 <MapHandler />
             </div>

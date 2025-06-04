@@ -1,37 +1,48 @@
 import Contact from "./Contact"
+import CustomLabel from "./form/Label"
+import Title from "./form/Title"
 import ReservationForm from "./ReservationForm"
 
 const Reservation = () => {
     return (
         <>
             <section id="reservation" className="reservation">
-                <div className="section-title">
-                    <h2>Make a Reservation</h2>
-                </div>
+                <Title>
+                    Make a reservation
+                </Title>
                 <div className="reservation-container">
                     <div className="reservation-info">
-                        <h3>What to Expect at The Moose</h3>
-                        <p>Western pub favorites with a bold Himalayan-South Asian twist</p>
+                        <CustomLabel color="" size="xl">What to Expect at The Moose</CustomLabel>
                         <br />
-                        <p>Signature fusion plates you won’t find anywhere else</p>
                         <br />
 
-                        <p>Legacy of 30+ years as Shotz Bar & Grill</p>
+                        <CustomLabel size="sm" color="">Western pub favorites with a bold Himalayan-South Asian twist</CustomLabel>
+                        <br />
+                        <CustomLabel size="sm" color="">Signature fusion plates you won’t find anywhere else</CustomLabel>
                         <br />
 
-                        <p>Craft beers, spiced cocktails, and tandoori perfection</p>
+                        <CustomLabel size="sm" color="">Legacy of 30+ years as Shotz Bar & Grill</CustomLabel>
                         <br />
 
-                        <p>A place to eat, drink, and explore new flavors</p>
+                        <CustomLabel size="sm" color="">Craft beers, spiced cocktails, and tandoori perfection</CustomLabel>
                         <br />
-                        <h3>Reservation hours:</h3>
+
+                        <CustomLabel size="sm" color="">A place to eat, drink, and explore new flavors</CustomLabel>
+                        <br />
+                        <br />
+                        <br />
+
+                        <CustomLabel color="" size="xl">Reservation hours:</CustomLabel>
+                        <br />
+
                         <ul>
                             <li>Monday to Thursday: 5:00 PM - 10:00 PM</li>
                             <li>Friday and Saturday: 5:00 PM - 11:00 PM</li>
                             <li>Sunday: 5:00 PM - 9:00 PM</li>
                         </ul>
                         <br />
-                        <p>Note<span style={{ color: 'red' }}> * </span> : We recommend making reservations at least 48 hours in advance to ensure availability.</p>
+                        <br />
+                        <CustomLabel size="sm" color="">Note<span style={{ color: 'red' }}> * </span> : We recommend making reservations at least 48 hours in advance to ensure availability.</CustomLabel>
                     </div>
                     <ReservationForm />
                 </div>

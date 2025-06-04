@@ -1,12 +1,10 @@
 import { useCallback, useState } from "react"
 import MenuItems from "./MenuItems"
+import CustomButton from "./form/CustomButton"
+import Title from "./form/Title"
 
 function Menu() {
     const tabs = [
-        {
-            id: 1,
-            label: 'All'
-        },
         {
             id: 2,
             label: 'Starters'
@@ -33,13 +31,11 @@ function Menu() {
 
     return (
         <section id="menu">
-            <div className="section-title">
-                <h2>Our Menu</h2>
-            </div>
-            <div className="menu-tabs">
+            <Title>What we serve</Title>
+            <div className="flex flex-wrap mb-8 justify-center gap-1">
                 {
                     tabs.map(itm => (
-                        <button key={itm.id} className={`tab-btn ${activeTab === itm.id ? 'active' : ''}`} onClick={() => handleTabChange(itm.id)}>{itm.label}</button>
+                        <CustomButton isActive={activeTab === itm.id} key={itm.id} onClick={() => handleTabChange(itm.id)} children={<>{itm.label}</>} type="pmy" />
                     ))
                 }
             </div>
