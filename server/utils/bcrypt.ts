@@ -3,5 +3,6 @@ export const hashPassword = async (str: string) => {
 };
 
 export const verifyPassword = async (str: string, hash: string) => {
+  console.log("hi");
   return Bun.password.verify(str, hash, "argon2d");
 };
