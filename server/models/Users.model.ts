@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
-    createdBy: { type: mongoose.Types.ObjectId },
+    createdBy: { type: mongoose.Schema.Types.ObjectId },
   },
   {
     timestamps: true,

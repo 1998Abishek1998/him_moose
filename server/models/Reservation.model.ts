@@ -23,10 +23,10 @@ const reservationSchema = new mongoose.Schema(
       default: ReservationStatus.REQUEST,
     },
     handledBy: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
     },
     lastUpdatedBy: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
     },
   },
   {

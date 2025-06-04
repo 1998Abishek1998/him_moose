@@ -9,8 +9,8 @@ const gallerySchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
-    createdBy: { type: mongoose.Types.ObjectId, required: true },
-    lastUpdatedBy: { type: mongoose.Types.ObjectId },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, required: true },
+    lastUpdatedBy: { type: mongoose.Schema.Types.ObjectId },
   },
   {
     timestamps: true,

@@ -38,8 +38,8 @@ const blogSchema = new mongoose.Schema(
       enum: Object.values(BlogParagraph),
       required: true,
     },
-    createdBy: { type: mongoose.Types.ObjectId, required: true },
-    lastUpdatedBy: { type: mongoose.Types.ObjectId },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, required: true },
+    lastUpdatedBy: { type: mongoose.Schema.Types.ObjectId },
   },
   {
     timestamps: true,

@@ -47,7 +47,7 @@ export enum ReservationStatus {
 
 export const objectIdSchema = z
   .string()
-  .refine((val) => mongoose.Types.ObjectId.isValid(val), {
+  .refine((val) => mongoose.Schema.Types.ObjectId.isValid(val), {
     message: "Invalid ObjectId",
   });
 
