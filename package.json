@@ -1,5 +1,8 @@
 {
   "name": "him_moo",
+    "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "bun": "dist/index.js",
   "scripts": {
     "dev": "cd frontend && bun run build && cd .. && bun --hot --smol run server/index.ts",
     "dev:be": "bun --hot --smol run server/index.ts",
