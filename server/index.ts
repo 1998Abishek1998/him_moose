@@ -2,6 +2,8 @@ import { serveStatic } from "hono/bun";
 import { HTTPException } from "hono/http-exception";
 import { env } from "./config/env";
 import app from "./app";
+import mongoose from "mongoose";
+import { Context } from "hono";
 
 app.get("*", serveStatic({ root: "./dist/build" }));
 app.get("*", serveStatic({ path: "./dist/build/index.html" }));
@@ -12,13 +14,16 @@ app.notFound((c) => {
 
 app.onError((err, c) => {
   if (err instanceof HTTPException) {
-    // Get the custom response
-    console.log(err.name, err.cause);
-    return c.json({ message: err.message }, 400);
+    return c.json({ error: err.getResponse().body }, err.status);
+  }
+  if (err instanceof mongoose.Error.ValidationError) {
+    c.json({ error: err.message }, 404);
   }
   console.error(JSON.stringify(err));
   return c.json({ mesage: err.message }, 500);
 });
+
+
 
 Bun.serve({
   fetch: app.fetch,

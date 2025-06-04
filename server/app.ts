@@ -44,12 +44,13 @@ app.use(
   })
 );
 
-app.use(csrf());
 app.use(prettyJSON());
 app.use(logger(customLogger));
 
 app.route("/api", api);
+app.use(csrf());
 dbConnect()
   .then(() => console.log("db connected"))
   .catch((err) => console.log("db error ", err));
+
 export default app;

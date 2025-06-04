@@ -6,6 +6,7 @@ export interface ExtractedErrorsType {
 }
 
 export const validateSchema = (result: any, c: Context) => {
+  console.log(result)
   if (!result.success) {
     const errors = result.error.issues
       .map((issue: { path: any[]; message: any }) => [
