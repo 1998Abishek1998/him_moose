@@ -8,6 +8,7 @@ const navItems = [
     // { href: '/gallery', label: 'Gallery' },
     { href: '/menu', label: 'Menu' },
     { href: '/reservation', label: 'Reservation' },
+    { href: '/dashboard/users', label: 'Login' },
 ];
 
 const Header: React.FC = () => {
