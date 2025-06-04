@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "cd frontend && bun run build && cd .. && bun --hot --smol run server/index.ts",
     "dev:be": "bun --hot --smol run server/index.ts",
-    "build": "cd frontend && bun run build && cd .. && bun build --target=bun server/index.ts --outdir ./dist",
+    "build": "cd frontend && bun install && bun run build && cd .. && bun build --target=bun server/index.ts --outdir ./dist",
     "start:prod": "bun dist/index.js"
   },
   "dependencies": {
