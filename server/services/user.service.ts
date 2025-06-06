@@ -13,9 +13,22 @@ class UserService {
     UserService.instance = this;
   }
 
-  async createUser(createUserPayload: CreateUserPayload) {
+  async createUser(createUserPayload: {
+    name: string;
+    email: string;
+    password: string;
+  }) {
     const data = await UsersModel.create(createUserPayload);
     return data._id;
+  }
+
+  async finUserByEmail(email: string) {
+    const user = await UsersModel.findOne({
+      email: email,
+      isActive: true,
+    });
+
+    return user;
   }
 
   async validateUser(loginPayload: LoginPayload) {
