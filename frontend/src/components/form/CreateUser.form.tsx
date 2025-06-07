@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import CustomFormInput from '../customInputs/CustomFormInput';
 import { createUser } from '../../utils/api';
 
-export function CreateUserForm() {
+export function CreateUserForm({ closeForm }: { closeForm: () => void }): React.ReactElement {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -18,7 +18,7 @@ export function CreateUserForm() {
             }, 4000);
         }
     }, [errors])
-    
+
     const isValidEmail = (email: string) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
@@ -48,7 +48,9 @@ export function CreateUserForm() {
 
         if (validateForm()) {
             console.log('Form submitted:', formData);
-            createUser(formData).then(data => console.log(data)).catch(err => setErrors({ apiError: err.message || "Some thing went wrong please try again later" }))
+            createUser(formData).then(() => {
+                closeForm()
+            }).catch(err => setErrors({ apiError: err.message || "Some thing went wrong please try again later" }))
         }
     };
 

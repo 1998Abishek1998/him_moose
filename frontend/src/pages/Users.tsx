@@ -68,7 +68,7 @@ const Users: React.FC = () => {
       {
         modelOpen && (
           <CustomModel footerActive={false} handleClose={handleModelOpen} handleModelOpen={handleModelOpen} handleSave={handleModelOpen} saveText='Save' closeText='Close' title='Add User'>
-            <CreateUserForm />
+            <CreateUserForm closeForm={handleModelOpen} />
           </CustomModel>
         )
       }
