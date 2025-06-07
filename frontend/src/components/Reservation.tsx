@@ -1,6 +1,6 @@
 import Contact from "./Contact"
-import CustomLabel from "./form/Label"
-import Title from "./form/Title"
+import CustomLabel from "./customInputs/Label"
+import Title from "./customInputs/Title"
 import ReservationForm from "./ReservationForm"
 
 const Reservation = () => {

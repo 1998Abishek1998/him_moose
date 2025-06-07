@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import OpeningSoonTag from "./tag/OpeningSoon"
-import CustomButton from "./form/CustomButton"
-import CustomLabel from "./form/Label"
+import CustomButton from "./customInputs/CustomButton"
+import CustomLabel from "./customInputs/Label"
 
 const Banner = () => {
     const navigate = useNavigate()

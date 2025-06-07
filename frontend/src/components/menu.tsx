@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import MenuItems from "./MenuItems"
-import CustomButton from "./form/CustomButton"
-import Title from "./form/Title"
+import CustomButton from "./customInputs/CustomButton"
+import Title from "./customInputs/Title"
 
 function Menu() {
     const tabs = [

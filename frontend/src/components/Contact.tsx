@@ -1,5 +1,5 @@
-import CustomLabel from "./form/Label"
-import Title from "./form/Title"
+import CustomLabel from "./customInputs/Label"
+import Title from "./customInputs/Title"
 import MapHandler from "./MapHandler"
 
 const Contact = () => {

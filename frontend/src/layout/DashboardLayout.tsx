@@ -8,7 +8,7 @@ const DashboardLayout: React.FC = () => {
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden bg-background">
         <Topbar />
-        <div className="flex-1 p-5 bg-gray-100 overflow-auto">
+        <div className="flex-1 p-5 bg-gray-100 overflow-auto text-black">
           <Outlet />
         </div>
       </div>
